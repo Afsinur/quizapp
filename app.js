@@ -10,7 +10,11 @@ mongoose.set("strictQuery", false);
 let cors = require("cors");
 let API_Routes = require("./routes/api");
 //app uses
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ibrahimquiz.netlify.app",
+  })
+);
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
