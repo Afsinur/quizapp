@@ -140,4 +140,21 @@ api.get_board_data = async (req, res) => {
   }
 };
 
+api.delete_data = async (req, res) => {
+  let email = req.params.email;
+  let password = req.params.password;
+
+  try {
+    let data = await User.findOneAndDelete({ email, password });
+
+    if (data) {
+      res.status(200).json({ done: 1 });
+    } else {
+      throw Error("something went wrong!");
+    }
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
+
 module.exports = api;

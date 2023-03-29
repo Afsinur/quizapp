@@ -3,7 +3,7 @@ const app = express();
 require("dotenv").config();
 const port = process.env.PORT || `5055`;
 const listen = () => {
-  console.log(`listening on port: ${port}`);
+  console.log(`listening on port: http://localhost:${port}`);
 };
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);

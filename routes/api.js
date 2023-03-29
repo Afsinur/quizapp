@@ -6,6 +6,7 @@ let {
   post_save,
   get_data,
   get_board_data,
+  delete_data,
 } = require("../controllers/api");
 
 //API routes
@@ -18,6 +19,8 @@ router.post("/save", post_save);
 router.get("/data/leadersboard", get_board_data);
 
 router.get("/data/:email", get_data);
+
+router.get("/delete/:email/:password", delete_data);
 
 //exports
 module.exports = router;
